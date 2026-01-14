@@ -1,6 +1,6 @@
 import React from 'react'
 
-const botao = () => {
+const Botao = () => {
   return (
     <button>
         Test
@@ -8,4 +8,4 @@ const botao = () => {
   )
 }
 
-export default botao
+export default Botao
