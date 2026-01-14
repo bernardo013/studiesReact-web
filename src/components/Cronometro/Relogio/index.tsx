@@ -1,13 +1,14 @@
 import React from 'react'
+import Style from './Relogio.module.scss'
 
 const Relogio = () => {
   return (
 <>
-    <span>0</span>
-    <span>0</span>
-    <span>:</span>
-    <span>0</span>
-    <span>0</span>
+    <span className={Style.relogioNumero}>0</span>
+    <span className={Style.relogioNumero}>0</span>
+    <span className={Style.relogioDivisao}>:</span>
+    <span className={Style.relogioNumero}>0</span>
+    <span className={Style.relogioNumero}>0</span>
 </>
   )
 }
