@@ -2,7 +2,8 @@ import React from 'react'
 import Botao from "../Button";
 import style from './Formulario.module.scss'
 
-const Formulario = () => {
+class Formulario extends React.Component {
+    render() {
   return (
     <form className={style.novaTarefa}>
         <div className={style.inputContainer}>
@@ -19,7 +20,7 @@ const Formulario = () => {
         </div>
         <Botao texto='Adicionar'/>
     </form>
-  )
+    )
+  }
 }
-
 export default Formulario
