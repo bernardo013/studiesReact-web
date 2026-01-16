@@ -2,12 +2,14 @@ import style from './Lista.module.scss'
 import Item from './Item'
 import { Itarefa } from '../../types/tarefa'
 
+//entender
 interface ListasProps { 
   tarefas: Itarefa[]
+  selecionaTarefa: (tarefaSelecionada: Itarefa) => void
 }
 
 
-function Lista({ tarefas }: ListasProps) {
+function Lista({ tarefas, selecionaTarefa }: ListasProps) {
     return(  
         <aside className={style.listaTarefas}>
             <h2>Estudos Do dia</h2>
@@ -15,7 +17,8 @@ function Lista({ tarefas }: ListasProps) {
                 {/* SRP */}
                 {tarefas.map((item, index) => (
                     <Item 
-                    key={index}
+                    selecionaTarefa={selecionaTarefa}
+                    key={item.id}
                     {...item}/>
                 ))}
             </ul>

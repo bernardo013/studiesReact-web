@@ -8,12 +8,22 @@ import { useState } from "react";
 function App() { 
 
   const [tarefas, setTarefas] = useState<Itarefa[] | []>([])
+  const [selecionado, setSelecionado] = useState<Itarefa>()
+
+  //entender
+  function selecionarTarefa(tarefaSelecionada: Itarefa) {
+    setSelecionado(tarefaSelecionada)
+    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+      ...tarefa,
+      selecionado: tarefa.id === tarefaSelecionada.id ? true : false
+    })))
+  }
 
   return (
     
     <div className={style.AppStyle}>
       <Formulario setTarefas={setTarefas} />
-      <Lista  tarefas={tarefas}/>
+      <Lista  tarefas={tarefas} selecionaTarefa={selecionarTarefa}/>
       <Cronometro />
     </div>
   );
