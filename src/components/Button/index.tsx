@@ -3,11 +3,12 @@ import style from './Button.module.scss'
 
 type botaoProps = {
   texto: string
+  type?: "button" | "submit" | "reset" | undefined
 }
 
-function Botao({ texto }: botaoProps)  {
+function Botao({ texto, type = 'button' }: botaoProps)  {
   return (
-    <button className={style.botao}>
+    <button type={type} className={style.botao}>
         {texto}
     </button>
   )
