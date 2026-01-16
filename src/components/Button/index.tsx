@@ -6,7 +6,7 @@ type botaoProps = {
   type?: "button" | "submit" | "reset" | undefined
 }
 
-function Botao({ texto, type = 'button' }: botaoProps)  {
+function Botao({ texto, type }: botaoProps)  {
   return (
     <button type={type} className={style.botao}>
         {texto}

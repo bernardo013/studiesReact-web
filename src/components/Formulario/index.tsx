@@ -1,12 +1,11 @@
 import React from 'react'
 import Botao from "../Button";
 import style from './Formulario.module.scss'
+import { Itarefa } from '../../types/tarefa';
+import { v4 as uuidv4 } from 'uuid'
 
 class Formulario extends React.Component<{
-    setTarefas: React.Dispatch<React.SetStateAction<{
-        tarefa: string
-        tempo: string
-    }[]>>
+    setTarefas: React.Dispatch<React.SetStateAction<Itarefa[]>> 
 }> {
     state = {
         tarefa: '',
@@ -15,7 +14,12 @@ class Formulario extends React.Component<{
 
     salvarTarefa = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, {...this.state, selecionado: false, completado: false, id: uuidv4()}])  
         console.log('state:', this.state)
+        this.setState({
+            tarefa: '',
+            tempo: '00:00'
+        })
 
     }
 
@@ -39,7 +43,7 @@ render() {
             { this.setState({...this.state, tempo: event.target.value }) } } //atualiza o estado
              id="tempo" min="00:00:00" max="01:30:00" required/>
         </div>
-        <Botao texto='Adicionar'/>
+        <Botao type="submit" texto='Adicionar'/>
     </form>
     )
   }

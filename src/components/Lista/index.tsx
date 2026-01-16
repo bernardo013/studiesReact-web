@@ -2,7 +2,12 @@ import style from './Lista.module.scss'
 import Item from './Item'
 import { Itarefa } from '../../types/tarefa'
 
-function Lista({ tarefas }: { tarefas: Itarefa[] }) {
+interface ListasProps { 
+  tarefas: Itarefa[]
+}
+
+
+function Lista({ tarefas }: ListasProps) {
     return(  
         <aside className={style.listaTarefas}>
             <h2>Estudos Do dia</h2>
