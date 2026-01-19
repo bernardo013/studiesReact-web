@@ -21,3 +21,7 @@ Este projeto é uma aplicação simples de gerenciamento de tarefas/estudos, des
 ✅ Funções puras
 
 ✅ Recursão (contador regressivo)
+
+
+# Pode ser acessado pelo por: 
+https://studies-react-web.vercel.app/
