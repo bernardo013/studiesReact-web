@@ -7,11 +7,11 @@ interface itemProps extends Itarefa {
 }
 
                 //props
-const Item = ({ tarefa, tempo, selecionado, completado, id, selecionaTarefa}: itemProps, ) => {
+const Item = ({ tarefa, tempo, selecionado, completado, id, selecionaTarefa}: itemProps) => {
   
 
   return (
-    <li className={`${style.item}  ${selecionado ? style.itemSelecionado : ''}`}  onClick={() => selecionaTarefa({
+    <li className={`${style.item}  ${selecionado ? style.itemSelecionado : ''} ${completado ? style.itemCompletado: ''}`}  onClick={() => !completado && selecionaTarefa({
       tarefa,
       tempo,
       selecionado,
@@ -24,6 +24,8 @@ const Item = ({ tarefa, tempo, selecionado, completado, id, selecionaTarefa}: it
         <span>
             {tempo}
         </span>
+        {/* rendização condicional se for true mostra se for false não mostra */}
+        {completado && <span className={style.concluido}></span>}
     </li>
   )
 }
