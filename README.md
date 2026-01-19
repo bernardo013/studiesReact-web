@@ -1,6 +1,6 @@
 # Projeto de Tarefas (To‑Do / Estudos)
 
-Este projeto é uma aplicação simples de gerenciamento de tarefas/estudos, desenvolvida com React + TypeScript, com foco em praticar conceitos fundamentais como estado, componentização, tipagem, imutabilidade e boas práticas em React moderno.
+Este projeto é uma aplicação simples de gerenciamento de tarefas/estudos, desenvolvida com React + TypeScript, com foco em praticar conceitos fundamentais do react 18. Código documentado e commits explicados
 
  ## Finalidade Educacional
 
